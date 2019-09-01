@@ -10,10 +10,10 @@ def parse(mapfile):
 	filtered_map = map.filter(ImageFilter.MedianFilter())
 	enhancer = ImageEnhance.Contrast(filtered_map)
 	
-	filename = f'{mapfile.name.split('/')[-1].split('.')[0]}_prepared.pdf'
+	original_filename = mapfile.name.split('/')[-1].split('.')[0]
 	
-	preprocessed = enhancer.enhance(2).convert(1).save(MAPS_ROOT + 'out/' + filename)
+	preprocessed = enhancer.enhance(2).convert(1).save(MAPS_ROOT + 'out/' + original_filename + '_prepared.pdf')
 	
-	text = pytesseract.image_to_string(Image.open()
+	text = pytesseract.image_to_string(Image.open())
 	print(f'{mapfile.name} yielded: {text}')
 
