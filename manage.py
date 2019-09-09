@@ -9,8 +9,9 @@ from lib.parse_map import parse
 def cli():
 	pass
 
+
 @cli.command()
-@click.option('--file', help='absolute filepath of input pdf', required=True)
+@click.option('--file', help='absolute filepath of input png', required=True)
 def process_map(file):
 	try:
 		parse(file)
@@ -20,4 +21,3 @@ def process_map(file):
 
 if __name__ == '__main__':
 	cli()
-	
